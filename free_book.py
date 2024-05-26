@@ -158,7 +158,7 @@ def create_banner():
     print(yellow + "***********************************************" + reset)
     print(
         yellow + "*" + "                   " + bold + "Powered by" + reset + "                " + yellow + "*" + reset)
-    print(yellow + "*" + "             " + cyan + "thewillpowermyanmar.com" + "         " + yellow + "*" + reset)
+    print(yellow + "*" + "             " + cyan + "thewellpowermyanmar.com" + "         " + yellow + "*" + reset)
     print(yellow + "*" + "                                             " + yellow + "*" + reset)
     print(yellow + "*" + "           " + cyan + "Brought To You By RED-SHADOW" + "      " + yellow + "*" + reset)
     print(yellow + "***********************************************" + reset)
