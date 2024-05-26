@@ -39,7 +39,7 @@ Please ensure that you have the legal right to access and use the audiobook API 
 
 ## Ownership and Credits
 
-This script was created for educational purposes. It interacts with an audiobook API provided by the well power myanmar . Any trademarks, logos, or content accessed through this script are the property of their respective owners.
+This script was created for educational purposes. It interacts with an audiobook API provided by the will power myanmar . Any trademarks, logos, or content accessed through this script are the property of their respective owners.
 
 ### Functions
 
@@ -61,6 +61,6 @@ Follow the on-screen prompts to interact with the API.
 
 - **Author**: Mg Aether
 - **Contact**: NONE
-- **API Provider**: The Well Power Myanmar 
+- **API Provider**: The Will Power Myanmar 
 
-# Special thank to the well power myanmar
+# Special thank to the will power myanmar
