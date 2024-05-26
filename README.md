@@ -52,7 +52,7 @@ This script was created for educational purposes. It interacts with an audiobook
 Here is a sample usage of the script:
 
 ```bash
-python3 free_book_api.py
+python3 free_book.py
 ```
 
 Follow the on-screen prompts to interact with the API.
