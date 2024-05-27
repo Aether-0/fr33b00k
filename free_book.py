@@ -3,7 +3,6 @@ import random
 import string
 from urllib.parse import quote
 from colorama import Fore, Style, init
-
 def get_book():
     # Initialize colorama
     init()
@@ -18,7 +17,7 @@ def get_book():
     # API endpoint and parameters
     url = f"https://willpoweraudiobooks.com/app/api/get_chapters.php"
     params = {
-        "user_id": user_id,
+        "user_id":user_id,
         "token": token,
         "book": book_id
     }
@@ -88,13 +87,56 @@ def get_book():
     else:
         print(f"Error: {response.status_code} - {response.reason}")
 
+def display_and_get_category_index():
+    init(autoreset=True)  # Initialize colorama and enable auto-reset after each print
+
+    categories = {
+        1: "Free ( အခမဲ့ )",
+        2: "စိတ်ပညာ",
+        3: "စီးပွားရေးနှင့် ငွေကြေး",
+        4: "ဘဝနေနည်း၊ အတွေး",
+        5: "ဝတ္ထုနှင့် ပုံပြင်များ",
+        6: "သမိုင်းနှင့် နည်းပညာ",
+        7: "အောင်မြင်တိုးတက်ရေး"
+    }
+
+    category_to_index = {
+        1: 14,
+        2: 10,
+        3: 3,
+        4: 12,
+        5: 11,
+        6: 9,
+        7: 6
+    }
+
+    colors = [Fore.RED, Fore.GREEN, Fore.YELLOW, Fore.BLUE, Fore.MAGENTA, Fore.CYAN, Fore.WHITE]
+
+    print("Category List:")
+    for key, value in categories.items():
+        color = colors[key % len(colors)]  # Rotate through the list of colors
+        print(f"{color}[{key}] {value}")
+
+    try:
+        category_number = int(input("Enter a category number (1-7): "))
+        index = category_to_index.get(category_number, None)
+        if index is not None:
+            return index
+        else:
+            print("Invalid category number.")
+            return None
+    except ValueError:
+        print("Invalid input. Please enter a number between 1 and 7.")
+        return None
 
 def search_book():
     # Initialize colorama
     init()
 
     # Prompt the user for category input
-    category = input("Enter the category ID: ")
+    category = display_and_get_category_index()
+    if category is None:
+        return
 
     # Define the URL with the user-provided category
     url = f'https://willpoweraudiobooks.com/app/api/get_playbooks.php?user_id=&token=&category={category}'
@@ -136,7 +178,6 @@ def search_book():
     else:
         print(f"Failed to retrieve data. HTTP Status code: {response.status_code}")
 
-
 def create_banner():
 
     # Define colors
@@ -162,7 +203,6 @@ def create_banner():
     print(yellow + "*" + "                                             " + yellow + "*" + reset)
     print(yellow + "*" + "           " + cyan + "Brought To You By RED-SHADOW" + "      " + yellow + "*" + reset)
     print(yellow + "***********************************************" + reset)
-
 
 # Call the function to create and display the banner
 create_banner()
